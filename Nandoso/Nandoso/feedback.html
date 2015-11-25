@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Nandoso</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-comments.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"> <!-- Optional -->
+
+    <script type="text/javascript" src="js/lib/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-comments.js"></script>
+
+    <link href="css/headerStyle.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $('#theFeedback').comments({
+            profilePictureURL: 'https://app.viima.com/static/media/user_profiles/user-icon.png',
+            getComments: function (success, error) {
+                var commentsArray = [{
+                    id: 1,
+                    created: '2015-10-01',
+                    content: 'Lorem ipsum dolort sit amet',
+                    fullname: 'Simon Powell',
+                    profile_picture_url: 'https://app.viima.com/static/media/user_profiles/user-icon.png',
+                    upvote_count: 2,
+                    user_has_upvoted: false
+                }];
+                success(commentsArray);
+            }
+        });
+    </script>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <!--Contains the top part of the page-->
+    <div id="header">
+        <a id="logo" href="index.html">
+            <img src="Images/Nandoso.png" alt="Go to Home page" width="250" height="85" border="0" />
+        </a>
+        <a class="button" href="menu.html">
+            Menu
+        </a>
+        <a class="button" href="liveChat.html">
+            Live Chats
+        </a>
+        <a id="feedback" href="feedback.html">
+            Feedback
+        </a>
+        <a class="button" href="info.html">
+            About us
+        </a>
+    </div>
+    <div id="theFeedback" style="width:1024px;height:800px;">
+
+    </div>
+
+
+</body>
+</html>

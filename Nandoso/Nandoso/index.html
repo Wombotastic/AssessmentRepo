@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Nandoso</title>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="css/MainStyle.css" rel="stylesheet" />
+    <link href="css/headerStyle.css" rel="stylesheet" />
+    
+    <script src="Scripts/facebookLogin.js"></script>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <!--Contains the top part of the page-->
+    <div id="header">
+        <a id="logo" href="index.html">
+            <img src="Images/Nandoso.png" alt="Go to Home page" width="250" height="85" border="0" />
+        </a>
+        <a class="button" href="menu.html">
+            Menu
+        </a>
+        <a class="button" href="liveChat.html">
+            Live Chats
+        </a>
+        <a class="button" href="feedback.html">
+            Feedback
+        </a>
+        <a class="button" href="info.html">
+            About us
+        </a>
+    </div>
+
+
+    <!--Facebook login-->
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+    <div id="status">
+    </div>
+    
+    <!--Contains the middle section  containing the 3 main big pics-->
+    <div id="midSection">
+        <a class="bigPics" href="menu.html">
+            <img src="Images/MenuPic.jpg" alt="Go to Menu" width="376" height="292" border="0" />
+        </a>
+        <a id="specialLink" href="specialPage.html">
+            <img src="Images/NandosoSpecial.jpg" alt="Go to Special deals" width="376" height="292" border="0" />
+        </a>
+        <a class="bigPics" href="feedback.html">
+            <img src="Images/feedback.jpg" alt="Go to feedback" width="376" height="292" border="0" />
+        </a>
+    </div>
+
+    <div id="lowerSection">
+        <a class="bigPics" href="chickenRoom.html">
+            <img src="Images/chickenPita.jpg" alt="Chicken Pita Room" width="376" height="292" border="0" />
+        </a>
+        <a class="bigPics" href="vegeRoom.html">
+            <img src="Images/vegetablepita.jpg" alt="Vege Pita Room" width="376" height="292" border="0" />
+        </a>
+        <a class="bigPics" href="info.html">
+            <img src="Images/aboutus.jpg" alt="About us" width="376" height="292" border="0" />
+        </a>
+    </div>
+
+
+</body>
+</html>
+

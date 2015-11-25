@@ -1,0 +1,55 @@
+﻿#header {
+   background-color:#CCCC99;
+   padding:100px 100px 1px;
+
+}
+#header>#logo {
+    margin-right:165px;
+}
+.button {
+    color:darkred;
+    margin:20px;
+    text-decoration:none;
+    font-family:Papyrus;
+    font-size:30px;
+    font-weight:bold;
+   
+}
+a:hover{
+    color:red;
+    text-decoration:none;
+}
+#special{
+    color:red;
+    margin:20px;
+    text-decoration:none;
+    font-family:Papyrus;
+    font-size:30px;
+    font-weight:bold;
+}
+#chatButton{
+    color:red;
+    margin:20px;
+    text-decoration:none;
+    font-family:Papyrus;
+    font-size:30px;
+    font-weight:bold;
+}
+#info{
+    color:red;
+    margin:20px;
+    text-decoration:none;
+    font-family:Papyrus;
+    font-size:30px;
+    font-weight:bold;
+}
+#feedback{
+    color:red;
+    margin:20px;
+    text-decoration:none;
+    font-family:Papyrus;
+    font-size:30px;
+    font-weight:bold;
+}
+
+

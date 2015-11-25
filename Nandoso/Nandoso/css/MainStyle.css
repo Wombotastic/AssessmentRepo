@@ -1,0 +1,22 @@
+﻿#midSection {
+    margin-top:100px;
+    margin-bottom:100px;
+}
+
+.bigPics{
+    margin-left:100px;
+    margin-right:10px;
+}
+.bigPics:hover{
+    transform: scale(1.02, 1.02);
+}
+#specialLink{
+    margin-left:100px;
+    margin-right:10px;
+    pointer-events: none;
+    opacity:0.5;
+}
+
+#specialLink:hover{
+    transform: scale(1.02, 1.02);
+}

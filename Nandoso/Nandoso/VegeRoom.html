@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Nandoso</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        .container {
+            padding: 20px;
+            margin: 20px;
+            border: thick solid black;
+            background-color: #CCCC99;
+            font-family: Papyrus;
+        }
+
+        .info {
+            font-family: Papyrus;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="signalr/hubs"></script>
+    <link href="css/headerStyle.css" rel="stylesheet" />
+    <!--Contains the top part of the page-->
+    <div id="header">
+        <a id="logo" href="index.html">
+            <img src="Images/Nandoso.png" alt="Go to Home page" width="250" height="85" border="0" />
+        </a>
+        <a class="button" href="menu.html">
+            Menu
+        </a>
+        <a id="chatButton" href="liveChat.html">
+            Live Chats
+        </a>
+        <a class="button" href="feedback.html">
+            Feedback
+        </a>
+        <a class="button" href="info.html">
+            About us
+        </a>
+    </div>
+    <div class="info">
+        <img src="Images/vegepita.jpg" />
+        <p> <b>Vegetarian Pita</b></p>
+        <p>The vegetarian pita contains the freshest of ingrediants to satisfy your cravings</p>
+        <p>With added secret sauce to give it that extra flavour you won't regret!</p>
+    </div>
+    <div class="container">
+        <p>Chat Here</p>
+        <input type="text" id="message" />
+        <input type="button" id="sendmessage" value="Send" />
+        <input type="hidden" id="displayname" />
+        <ul id="discussion"></ul>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            // Declare a proxy to reference the hub.
+            var chat = $.connection.chatHub;
+            // Create a function that the hub can call to broadcast messages.
+            chat.client.broadcastMessage = function (name, message) {
+                // Html encode display name and message.
+                var encodedName = $('<div />').text(name).html();
+                var encodedMsg = $('<div />').text(message).html();
+                // Add the message to the page.
+                $('#discussion').append('<li><strong>' + encodedName
+                    + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
+            };
+            // Get the user name and store it to prepend to messages.
+            $('#displayname').val(prompt('Enter your name:', ''));
+            // Set initial focus to message input box.
+            $('#message').focus();
+            // Start the connection.
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+                    // Call the Send method on the hub.
+                    chat.server.send($('#displayname').val(), $('#message').val());
+                    // Clear text box and reset focus for next comment.
+                    $('#message').val('').focus();
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
